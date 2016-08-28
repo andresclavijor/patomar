@@ -34,7 +34,7 @@
 	<div class="wrapper full-page-wrapper page-auth page-login text-center">
 		<div class="inner-page">
 			<div class="logo">
-				<a><img src="" alt=""></a>
+				<a><img src="images/pa tomar.png" alt=""></a>
 			</div>
 			
 			<div class="login-box center-block">
