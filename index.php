@@ -68,7 +68,7 @@
                             <div class="panel-heading" style="background-color: #bda9a9">
                                 <div class="row" onClick="irLink(4);">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-male fa-5x"></i><i class="fa fa-female fa-5x"></i>
+                                        <i class="fa fa-black-tie fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">                                        
                                         <h3>Vendedores</h3>
