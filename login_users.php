@@ -34,7 +34,7 @@
 	<div class="wrapper full-page-wrapper page-auth page-login text-center">
 		<div class="inner-page">
 			<div class="logo">
-				<a><img src="images/patomar.png" alt=""></a>
+				<a><img src="images/patomar logo pequeño.png" alt=""></a>
 			</div>
 			
 			<div class="login-box center-block">
