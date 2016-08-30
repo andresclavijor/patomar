@@ -1,7 +1,6 @@
 <?php
 include 'db.class.php';
 
-echo "si funciona";
 
 	//$s_nombre = $_REQUEST['s_nombre'];
 
@@ -14,16 +13,19 @@ echo "si funciona";
 		'ID_VENDEDOR'	   => $_REQUEST['id_vendedor']
 	);
 
-	var_dump($reg_facturas);
+	//var_dump($reg_facturas);
 
 	//insercion en db
 	$db = new database();
 	$db->conectar();
-	$res = $db->insert_record('facturas', $reg_facturas);
+	$res = $db->insert_record('facturas', $reg_facturas,true);
+	
+	//echo "res".$res;
 	
 	if ($res) {
 		# ok insert
-		echo "ok insert factura";
+		//echo "ok insert factura : n.". $res;
+		header('Location: ../detalle_fac.php?oid='.$res);
 	}else{
 		echo "datos erroneos";
 	}

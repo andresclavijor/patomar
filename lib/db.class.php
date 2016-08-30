@@ -53,7 +53,7 @@ class database {
   /*
   -- insertar registros
   */
-   public function insert_record($tabla,$data){
+   public function insert_record($tabla,$data,$returnid = null){
     $columns = implode(", ",array_keys($data));
     $values  = implode(", ",array_values($data));
 
@@ -65,7 +65,13 @@ class database {
       echo 'PostgreSQL Error: '. 'tbl:'. $tabla .'-' . pg_last_error();
       exit;
     }
-      return $result;
+      if ($returnid) {
+        # retorne last_id
+        $oid = pg_last_oid($result);
+        return $oid;
+      }else{
+        return $result;
+      }
 
    }
 

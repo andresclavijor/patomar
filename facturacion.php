@@ -1,5 +1,6 @@
 <?php
     include 'layout/menu_user.php';
+    include 'lib/view.php';
 ?>
     <style type="text/css">
         input{
@@ -30,14 +31,14 @@
                     <div class="col-md-8 col-md-offset-2">
                         <h4>Facturacion : <small>Paso 1</small> </h4>
                         <br>
-                        <p>Cantidad de productos solicitados</p>
+                        <p>Información basica</p>
 
                     </div>
                 </div>
 
                 <!--row datos vendedor -->
                 <div class="row">
-                    <div class="col-sm-6 col-md-offset-3">
+                    <div class="col-md-6 col-md-offset-3">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> Factura</h3>
@@ -80,7 +81,7 @@
                                     <hr>
 
                                     <div class="form-group">
-                                        <label for="tipo_envio" class="control-label ">tipo envio:</label>
+                                        <label for="tipo_envio" class="control-label ">Tipo envio:</label>
                                         <div class="col-sm-12">
                                             <div class="input-group">
                                                 <input type="text" placeholder="tipo envio" name="tipo_envio" class="form-control" required>
@@ -91,21 +92,29 @@
                                     <hr>
 
                                     <div class="form-group">
-                                        <label for="id_cliente" class="control-label ">id cliente:</label>
+                                        <label for="id_cliente" class="control-label ">Cliente:</label>
                                         <div class="col-sm-12">
                                             <div class="input-group">
-                                                <input type="number" min="0" max="1000000" placeholder="id cliente" name="id_cliente" class="form-control" required>
-                                                <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                                                <select name="id_cliente" class="form-control" required>
+                                                    <option value="">Seleccione</option>
+                                                <?php   
+                                                    $resLista = seleccionClientes();
+                                                    while ($datoClie = pg_fetch_array($resLista, null, PGSQL_ASSOC)) {
+                                                        echo "<option value='".$datoClie['id_cliente']."'> ".$datoClie['nombre'] ."</option>";
+                                                    }
+                                                ?>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
                                     <hr>
 
                                     <div class="form-group">
-                                        <label for="id_vendedor" class="control-label ">id vendedor:</label>
+                                        <label for="id_vendedor" class="control-label ">Vendedor:</label>
                                         <div class="col-sm-12">
                                             <div class="input-group">
-                                                <input type="number" min="0" max="1000000" placeholder="id vendedor" name="id_vendedor" class="form-control" required>
+                                                <input type="hidden" value="<?php echo $_SESSION['id_user'] ?>" name="id_vendedor">
+                                                <input type="text" value="<?php echo $_SESSION['nombre'] ?>" disabled/>
                                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                             </div>
                                         </div>
@@ -128,34 +137,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <!-- lista de productos -->
-                    <div class="productos col-md-8 col-md-offset-2">
-                        <?php
-                            for ($i=0; $i < 12 ; $i++) { 
-                                echo '<div class="col-md-3 col-sm-4">
-                                        <div class="ibox">
-                                            <div class="ibox-content">
-                                                <h5>Nom producto</h5>
-                                                <div class="m-t-sm small">disponible :<small> 5 </small> </div>
-                                                <h4>$ 000.000</h4>
-                                                <div class="form-group"> <input type="number" min="0" max="5" value="0" /> </div>
-                                            </div>
-                                        </div>
-                                    </div>';
-                            }
-                        ?>
-                        <div class="col-sm-4">
-                            <button class="btn btn-white" type="submit">Atras</button>
-                            <button class="btn btn-primary" type="submit">Continuar</button>
-                        </div>
-                        <br>
-                    </div>
-                    <!-- /.lista de productos -->
-
                 </div>
                 <!-- /.row -->
 
