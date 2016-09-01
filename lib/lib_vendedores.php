@@ -27,7 +27,6 @@ include 'db.class.php';
 	
 	if ($res) {
 		# insert ok
-		echo "Vendedor creado.";
 		header(header('Location: http://www.commentcamarche.net/forum/');
 	}
 
