@@ -27,7 +27,7 @@ include 'db.class.php';
 	
 	if ($res) {
 		# insert ok
-		header(header('Location: http://www.commentcamarche.net/forum/');
+		header('Location: http://www.commentcamarche.net/forum/');
 	}
 
 
