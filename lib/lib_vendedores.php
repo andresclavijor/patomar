@@ -28,6 +28,7 @@ include 'db.class.php';
 	if ($res) {
 		# insert ok
 		echo "Vendedor creado.";
+		header('Location: http://patomarbadc.herokuapp.com/index.php');
 	}
 
 
