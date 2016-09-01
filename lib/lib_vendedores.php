@@ -27,7 +27,7 @@ include 'db.class.php';
 	
 	if ($res) {
 		# insert ok
-		header('Location: http://www.commentcamarche.net/forum/');
+		header('Location: http://patomarbadc.herokuapp.com/panel_vendedores.php');
 	}
 
 
