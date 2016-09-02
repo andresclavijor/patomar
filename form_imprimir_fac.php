@@ -67,21 +67,25 @@
                         </thead>
                         <tbody>
                         <?php 
+							$total = 0;
                             $res_det = obtener_detalle_fac($data_fact[0]);
                             while ( $row = pg_fetch_array($res_det) ) {
                                 $res_prd = obtener_detalle_prod($row[0]);
 								if($dato_prod = pg_fetch_array($res_prd))
 								{
 									$nombre_prod = $dato_prod[1];
+									$valor_unidad = $dato_prod[3];
 								}
 								echo " 
                                 <tr>
                                     <td><i class='fa fa-circle-o'></i></td>
                                     <td> ".$nombre_prod." </td>
                                     <td> ".$row[2]." </td>
-                                    <td> ".$dato_prod[3]." </td>
+                                    <td> ".($row[2]*$valor_unidad)." </td>
                                 </tr>";
+								$total+= ($row[2]*$valor_unidad);
                             }
+							echo "Total:".$total;
                         ?>
                         </tbody>
                     </table>
