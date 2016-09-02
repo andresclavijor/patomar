@@ -28,7 +28,7 @@ include 'view.php';
 
 				if ($res) {
 					# ok insert
-					echo "ok actualizado inventario <br>";
+					header('Location: http://patomarbadc.herokuapp.com/form_imprimir_fac.php');
 					//deducir del inventario la cantidad del producto
 					update_inventario($sel_prod[$cont],$valor);
 				}else{
