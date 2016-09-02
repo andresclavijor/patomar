@@ -99,6 +99,15 @@
 		$db->disconnect();
 		return $result;
 	}
+	
+	function obtener_detalle_prod($id_prod)
+	{
+		$db = new database();
+		$db->conectar();
+		$result = $db->consulta("SELECT * FROM public.productos where id_producto =$id_prod");
+		$db->disconnect();
+		return $result;
+	}
 
 
 ?>

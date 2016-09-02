@@ -61,7 +61,6 @@
                             <tr>
                                 <th>  </th>
                                 <th>Nombre</th>
-                                <th>Descripcion</th>
                                 <th>Cantidad</th>
                                 <th>Valor</th>
                             </tr>
@@ -70,12 +69,17 @@
                         <?php 
                             $res_det = obtener_detalle_fac($data_fact[0]);
                             while ( $row = pg_fetch_array($res_det) ) {
-                                echo " 
+                                $res_prd = obtener_detalle_prod($row[0]);
+								if($dato_prod = pg_fetch_array($res_prd))
+								{
+									$nombre_prod = $dato_prod[1];
+								}
+								echo " 
                                 <tr>
                                     <td><i class='fa fa-circle-o'></i></td>
-                                    <td> ".$row[0]." </td>
-                                    <td> ".$row[1]." </td>
+                                    <td> ".$nombre_prod." </td>
                                     <td> ".$row[2]." </td>
+                                    <td> ".$dato_prod[3]." </td>
                                 </tr>";
                             }
                         ?>
