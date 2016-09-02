@@ -68,17 +68,14 @@
                         </thead>
                         <tbody>
                         <?php 
-                            $res_row = listaVendedores();
+                            $res_row = obtener_detalle_fac($data_fact[0]);
                             while ( $row = pg_fetch_array($res_row, null, PGSQL_ASSOC) ) {
                                 echo " 
                                 <tr>
                                     <td><i class='fa fa-circle-o'></i></td>
-                                    <td class='td_name'>".$row["p_nombre"]." ".$row["s_nombre"]."</td>
-                                    <td class='td_name'>".$row["p_apellido"]." ".$row["s_apellido"]."</td>
-                                    <td> ".$row['salario']." </td>
-                                    <td> ".$row['email']." </td>
-                                    <td> ".$row['telefono']." </td>
-                                    <td> ".$row['sexo']." </td>
+                                    <td> ".$row[0]." </td>
+                                    <td> ".$row[1]." </td>
+                                    <td> ".$row[2]." </td>
                                 </tr>";
                             }
                         ?>

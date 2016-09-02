@@ -90,6 +90,15 @@
 		$db->disconnect();
 		return $result;
 	}
+	
+	function obtener_detalle_fac($id)
+	{
+		$db = new database();
+		$db->conectar();
+		$result = $db->consulta("SELECT * FROM public.detalle_factura where id_factura =$id");
+		$db->disconnect();
+		return $result;
+	}
 
 
 ?>
