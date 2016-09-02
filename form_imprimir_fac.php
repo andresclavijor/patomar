@@ -32,6 +32,7 @@
                                 <div class="">
                                     <div class="">
                                         <?php
+										echo $_REQUEST['OID'];
                                             $res_row = datosUser($_SESSION['id_user']);
                                                 if ( $data_user = pg_fetch_array($res_row, null, PGSQL_ASSOC) ) {
                                                     //echo "ok data";

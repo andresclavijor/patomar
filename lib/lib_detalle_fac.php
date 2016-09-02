@@ -28,7 +28,7 @@ include 'view.php';
 
 				if ($res) {
 					# ok insert
-					header('Location: http://patomarbadc.herokuapp.com/form_imprimir_fac.php');
+					
 					//deducir del inventario la cantidad del producto
 					update_inventario($sel_prod[$cont],$valor);
 				}else{
@@ -38,7 +38,7 @@ include 'view.php';
     	$cont++;
 	}
 
-
+	header('Location: http://patomarbadc.herokuapp.com/form_imprimir_fac.php?OID='.$oid_fac);
 	//insercion en db
 	/*
 	//echo "res".$res;
