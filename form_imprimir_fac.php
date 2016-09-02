@@ -40,9 +40,10 @@
                                         ?>
                                         <p> No. Factura :  <?php echo $data_fact[1]; ?> </p>
                                         <p> Fecha Factura : <?php echo $data_fact[2] ?></p>
-                                        <p> Tipo Envio :<?php echo $data_fact[3] ?> </p>
-                                        <p> Cliente :<?php echo $data_fact[4] ?></p>
-                                        <p> Vendedor : <?php echo $data_fact[5] ?></p>
+                                        <p> Fecha Entrega :<?php echo $data_fact[3] ?> </p>
+                                        <p> Tipo Envio :<?php echo $data_fact[4] ?></p>
+                                        <p> Cliente : <?php echo $data_fact[5] ?></p>
+										<p> Vendedor : <?php echo $data_fact[6] ?></p>
                                     </div>
                                     <!-- <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>-->
                                 </div>
