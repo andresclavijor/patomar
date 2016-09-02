@@ -81,6 +81,15 @@
 			}
 		//$db->disconnect();
 	}
+	
+	function obtener_factura($OID)
+	{
+		$db = new database();
+		$db->conectar();
+		$result = $db->consulta("SELECT * FROM public.facturas where oid =$OID");
+		$db->disconnect();
+		return $result;
+	}
 
 
 ?>

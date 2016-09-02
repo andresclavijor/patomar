@@ -33,16 +33,16 @@
                                     <div class="">
                                         <?php
 										echo $_REQUEST['OID'];
-                                            $res_row = datosUser($_SESSION['id_user']);
-                                                if ( $data_user = pg_fetch_array($res_row, null, PGSQL_ASSOC) ) {
-                                                    //echo "ok data";
+                                            $res_row = obtener_factura($_REQUEST['OID']);
+                                                if ( $data_fact = pg_fetch_array($res_row) ) {
+                                                    //
                                                 }
                                         ?>
-                                        <p> No. Factura :  <?php echo $data_user['p_nombre']; ?> </p>
-                                        <p> Fecha Factura : <?php echo $data_user['s_nombre'] ?></p>
-                                        <p> Tipo Envio :<?php echo $data_user['p_apellido'] ?> </p>
-                                        <p> Cliente :<?php echo $data_user['s_apellido'] ?></p>
-                                        <p> Vendedor : <?php echo $data_user['salario'] ?></p>
+                                        <p> No. Factura :  <?php echo $data_fact[1]; ?> </p>
+                                        <p> Fecha Factura : <?php echo $data_fact[2] ?></p>
+                                        <p> Tipo Envio :<?php echo $data_fact[3] ?> </p>
+                                        <p> Cliente :<?php echo $data_fact[4] ?></p>
+                                        <p> Vendedor : <?php echo $data_fact[5] ?></p>
                                     </div>
                                     <!-- <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>-->
                                 </div>
