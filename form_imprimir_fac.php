@@ -68,8 +68,8 @@
                         </thead>
                         <tbody>
                         <?php 
-                            $res_row = obtener_detalle_fac($data_fact[0]);
-                            while ( $row = pg_fetch_array($res_row, null, PGSQL_ASSOC) ) {
+                            $res_det = obtener_detalle_fac($data_fact[0]);
+                            while ( $row = pg_fetch_array($res_det) ) {
                                 echo " 
                                 <tr>
                                     <td><i class='fa fa-circle-o'></i></td>
